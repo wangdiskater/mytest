@@ -1,0 +1,30 @@
+micronaut:
+  application:
+    name: mytest
+  server:
+    port: 8077
+    cors:
+      enabled: true
+  security:
+    enabled: true
+    token:
+      jwt:
+        enabled: true
+        signatures:
+          secret:
+            generator:
+              secret: "aEok5Q9FuKljCpUFqNK7T18yxGxCaClQ"
+              jws-algorithm: HS256
+        generator:
+          access-token-expiration: 360000
+datasources:
+  default:
+    jdbc-url: jdbc:mysql://localhost:3306/mytest1?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useColumnNamesInFindColumn=true
+    username: root
+    password: '123456'
+    dialect: MYSQL
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    max-lifetime: 180000
+---
+redis:
+  uri: redis://localhost:6379

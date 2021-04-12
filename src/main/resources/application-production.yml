@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: mytest
+  server:
+    port: 8077
+    cors:
+      enabled: true
+  security:
+    enabled: true
+    token:
+      jwt:
+        enabled: true
+        signatures:
+          secret:
+            generator:
+              secret: "IxeyqaY4THn74MW3ZXyKTbETxxLnOS0y"
+              jws-algorithm: HS256
+        generator:
+          access-token-expiration: 360000
