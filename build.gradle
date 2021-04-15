@@ -35,8 +35,8 @@ dependencies {
     implementation "io.micronaut:micronaut-http-server-netty"
     implementation "io.micronaut:micronaut-http-client"
 
+    compile "commons-beanutils:commons-beanutils:1.9.3"
     compile 'org.apache.commons:commons-lang3:3.9'
-
     // guava
     compile 'com.google.guava:guava:28.0-jre'
 
@@ -46,7 +46,8 @@ dependencies {
     // redis
     compile 'io.micronaut.configuration:micronaut-redis-lettuce'
 
-
+//    // 解密
+    implementation 'org.bouncycastle:bcprov-jdk16:1.46'
     //DB
     compile "io.micronaut.data:micronaut-data-jdbc:$micronautDataVersion"
     compile 'mysql:mysql-connector-java:8.0.16'

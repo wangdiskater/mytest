@@ -66,4 +66,18 @@ public class EncryptTest {
 
     }
 
+    @Test
+     void test2() {
+        String value = "你炸了";
+        for (int i = 0; i < 10 ; i++) {
+//            String encrypt = AESUtil.encrypt(value, null);
+//            System.out.println(encrypt);
+
+            String encrypt = RSAHelper.encipher(value, RSAHelper.PUBLIC_KEY_VALUES);
+            System.out.println(encrypt);
+
+        }
+
+    }
+
 }

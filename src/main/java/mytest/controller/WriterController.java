@@ -45,10 +45,6 @@ public class WriterController {
     HttpResponse getWriter(@QueryValue Long id) {
         Optional<WriterDAO> writerOpt = writerRepository.findById(id);
         WriterDAO writerDAO = writerOpt.get();
-        String writerName = writerDAO.getWriterName();
-        writerDAO.setWriterName(RSAHelper.decipher(writerName, RSAHelper.PRIVATE_KEY_VALUES));
-
-
         return HttpResponse.ok(writerOpt);
     }
 
