@@ -1,11 +1,9 @@
-package mytest.jdk.option;
+package mytest.jdk.optional;
 
 import org.junit.jupiter.api.Test;
-import org.junit.platform.commons.util.StringUtils;
 
 import java.util.Optional;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 /**
  * @Description
