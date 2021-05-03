@@ -1,6 +1,4 @@
-package mytest.thread;
-
-import org.checkerframework.checker.units.qual.C;
+package mytest.jdk.thread;
 
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;

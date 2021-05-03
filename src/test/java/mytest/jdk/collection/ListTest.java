@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -69,6 +71,26 @@ public class ListTest {
     }
     static class NullObj{
 
+    }
+
+    /**
+     * 功能描述 通过反射可以在Integer的List中添加String
+     * @author wangdi
+     * @date   2021/5/3 15:06
+     * @param
+     * @return void
+     */
+    @Test
+    void reflectAdd() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+        List<Integer> list = new ArrayList<>();
+        list.add(12);
+        //这里直接添加会报错
+//        list.add("a");
+        Class<? extends List> clazz = list.getClass();
+        Method add = clazz.getDeclaredMethod("add", Object.class);
+        //但是通过反射添加，是可以的
+        add.invoke(list, "kl");
+        System.out.println(list);
     }
 
 }

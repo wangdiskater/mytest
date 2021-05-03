@@ -1,4 +1,4 @@
-package mytest.thread;
+package mytest.jdk.thread;
 
 /**
  * @version 1.0
