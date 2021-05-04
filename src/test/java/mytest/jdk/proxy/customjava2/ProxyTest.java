@@ -18,7 +18,8 @@ public class ProxyTest {
 
         CustomSmsService proxyObj = (CustomSmsService) CustomProxyFactory.getProxy(customSmsServiceImp, new SendMsgInvocationHandler(customSmsServiceImp));
 
-        proxyObj.sendMsg("代理对象方法");
+        Object str = proxyObj.sendMsg("代理对象方法");
+        System.out.println(str);
 
     }
 }
