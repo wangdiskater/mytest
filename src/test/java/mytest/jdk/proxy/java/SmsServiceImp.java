@@ -2,7 +2,7 @@ package mytest.jdk.proxy.java;
 
 /**
  * @version 1.0
- * @ClassName SmsServiceImp
+ * @ClassName CustomSmsServiceImp
  * @Description todo
  * @Author wangdi
  * @Date 2021/5/3 22:01

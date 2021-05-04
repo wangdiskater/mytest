@@ -15,8 +15,8 @@ public class JavaProxy {
     public static void main(String[] args) {
         SmsServiceImp smsServiceImp = new SmsServiceImp();
         Class<? extends SmsServiceImp> aClass = smsServiceImp.getClass();
-//        SmsService newProxyInstance = (SmsService) Proxy.newProxyInstance(aClass.getClassLoader(), aClass.getInterfaces(),
-//                new SmsInvocationHandler(smsServiceImp));
+//        CustomSmsService newProxyInstance = (CustomSmsService) Proxy.newProxyInstance(aClass.getClassLoader(), aClass.getInterfaces(),
+//                new SendMsgInvocationHandler(smsServiceImp));
 
         SmsService newProxyInstance = (SmsService) getProxyInstance(smsServiceImp, new SmsInvocationHandler(smsServiceImp));
 

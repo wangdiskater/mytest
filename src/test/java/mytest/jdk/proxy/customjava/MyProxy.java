@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @version 1.0
  * @ClassName MyProxy
- * @Description todo
+ * @Description  想照抄jdk动态代理的源码手动实现动态代理，有点拉胯。
  * @Author wangdi
  * @Date 2021/5/3 22:35
  **/

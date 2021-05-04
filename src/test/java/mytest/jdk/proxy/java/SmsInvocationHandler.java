@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 
 /**
  * @version 1.0
- * @ClassName SmsInvocationHandler
+ * @ClassName SendMsgInvocationHandler
  * @Description todo
  * @Author wangdi
  * @Date 2021/5/3 22:02
