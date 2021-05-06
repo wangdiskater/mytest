@@ -29,8 +29,8 @@ public class FastJsonTest {
         strings.add("test4");
         strings.add("test5");
         subBeanTest.setStrList(strings);
-        beanTestList.setSubBeanTestList(List.of(subBeanTest));
-        beanTest.setData(List.of(beanTestList));
+//        beanTestList.setSubBeanTestList(List.of(subBeanTest));
+//        beanTest.setData(List.of(beanTestList));
 
         try {
             String s = sObjectMapper.writeValueAsString(beanTest);
