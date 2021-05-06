@@ -56,6 +56,10 @@ dependencies {
 // https://mvnrepository.com/artifact/cglib/cglib
     implementation group: 'cglib', name: 'cglib', version: '3.3.0'
 
+    //图片压缩
+    // https://mvnrepository.com/artifact/net.coobird/thumbnailator
+    implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.8'
+
 
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")
