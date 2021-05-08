@@ -43,6 +43,21 @@ public class IntegerTest {
         System.out.println(add.floatValue());
         System.out.println(add.toString());
 
+    }
+
+    @Test
+    void maxInteger(){
+        int maxValue = Integer.MAX_VALUE;
+        System.out.println(maxValue);
+
+        //2^31 = 2,147,483,648
+        int i = Integer.MAX_VALUE - 8;
+        System.out.println(i);
+
+
+        int i1 = Integer.MAX_VALUE - i;
+        System.out.println(i1);
 
     }
+
 }

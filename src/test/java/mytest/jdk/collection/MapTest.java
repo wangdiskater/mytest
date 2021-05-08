@@ -28,7 +28,9 @@ public class MapTest {
         }
     }
 
-
+    /**
+     * 测试两种遍历的效率？
+     */
     @Test
     void test2() {
         Map<String, Object> attributes = getMap(100000);
@@ -62,6 +64,18 @@ public class MapTest {
             stringObjectHashMap.put(i+"" , "憨批测试");
         }
         return stringObjectHashMap;
+    }
+
+    /**
+     * 看源码
+     */
+    @Test
+    void test3() {
+        HashMap<String, String> hashMap = new HashMap<>();
+
+        String put = hashMap.put("a", "b");
+
+
     }
 
 
