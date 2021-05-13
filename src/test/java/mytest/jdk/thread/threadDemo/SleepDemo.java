@@ -1,7 +1,7 @@
-package mytest.jdk.thread;
+package mytest.jdk.thread.threadDemo;
 
 /**
- * @Description
+ * @Description sleep 是Thread 在限时等待的状态
  * @ClassName SleepDemo
  * @Author wangDi
  * @date 2021-04-26 15:54

@@ -1,4 +1,4 @@
-package mytest.jdk.thread;
+package mytest.jdk.thread.threadDemo;
 
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
