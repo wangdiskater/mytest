@@ -3,6 +3,7 @@ package mytest.jdk.thread;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @version 1.0
@@ -18,6 +19,7 @@ public class CallableDemo {
         @Override
         public Integer call() throws Exception {
             System.out.println("callable come in ...");
+            int i = 1 / 0;
             return 1024;
         }
     }
@@ -29,6 +31,10 @@ public class CallableDemo {
         new Thread(futureTask, "AA").start();
         int result01 = 100;
         //用FutureTask的get方法得到返回值。
+
+        System.out.println("isDone :" + futureTask.isDone());
+        System.out.println("isCancelled: " + futureTask.isCancelled());
+
         int result02 = futureTask.get();
         System.out.println("result=" + (result01 + result02));
     }
