@@ -1,6 +1,5 @@
 package mytest.jdk.collection;
 
-import jdk.vm.ci.meta.Local;
 
 import java.time.LocalDate;
 import java.util.Comparator;
