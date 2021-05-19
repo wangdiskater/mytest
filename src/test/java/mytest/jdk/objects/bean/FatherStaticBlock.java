@@ -18,4 +18,6 @@ public class FatherStaticBlock {
     public FatherStaticBlock() {
         System.out.println("father constructor");
     }
+
+    public void print(){}
 }
