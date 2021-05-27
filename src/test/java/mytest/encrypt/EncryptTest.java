@@ -66,6 +66,8 @@ public class EncryptTest {
 
     }
 
+
+
     @Test
      void test2() {
         String value = "你炸了";
