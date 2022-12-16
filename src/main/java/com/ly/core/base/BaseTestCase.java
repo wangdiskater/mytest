@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
  */
 //properties属性指定本地测试需要用到的配置文件
 //本地运行时，需要设置properties值为具体的某个配置文件
-@SpringBootTest(properties = {"spring.profiles.active=qa"})
+@SpringBootTest(properties = {"spring.profiles.active=local"})
 //通过maven命令运行时需要把该参数去掉
 //@SpringBootTest
 @Listeners({BaseLifeCycleListener.class, TestClassListener.class})

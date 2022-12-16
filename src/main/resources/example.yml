@@ -63,4 +63,4 @@ testCase:
                 "veriCode": ""
             }
         validate:
-          eq: ["errorCode": 2]
+          eq: ["errorCode": 1]

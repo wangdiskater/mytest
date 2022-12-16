@@ -1,6 +1,6 @@
 spring:
     profiles:
-        active: #env#
+        active: local
     autoconfigure:
         #因为多redis数据源, 排除掉springBoot自动装配redisTemplate
         exclude:

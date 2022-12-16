@@ -1,0 +1,92 @@
+testCase:
+-   name: login-code
+    description: 获取code
+    type: form
+    url: /ra/mock/getCode
+    method: GET
+    headers:
+    requests:
+    validate:
+    saveGlobal: ["sessionId":"msg"]
+    parameters:
+
+-   name: login-check
+    description: 登录测试
+    type: form
+    url: /sys/loginCheck
+    method: POST
+    headers:
+        Cookie: ${sessionId}
+    requests:
+        userAccount: dwang
+        password: '000000'
+        code: 'mock'
+    validate:
+        eq: ["code": 0]
+    parameters:
+      - name: login-passWord-succcess
+        description: 密码正确
+        requests:
+        validate:
+          eq: ["code": 0]
+
+-   name: get-mock-challenge
+    description: 获取challenge值
+    type: form
+    url: /ra/mock/getChallenge
+    method: GET
+    headers:
+        Cookie: ${sessionId}
+    requests:
+    validate:
+    saveGlobal: ["challenge":"msg"]
+    parameters:
+
+-   name: maker-certSerial
+    description: 获取证书号
+    type: form
+    url: /ra/certSerial
+    method: POST
+    headers:
+        Cookie: ${sessionId}
+    requests:
+        cert: "308201a83082014fa00302010202080d87c258e82f496b300a06082a811ccf550183753046310b300906035504061302434e31123010060355040a0c0953797374656d2043413123302106035504030c1a53797374656d20526f6f74204341204365727469666963617465301e170d3231313031383036323135325a170d3236313031373036323135325a3047310b300906035504061302434e31123010060355040a0c0953797374656d2043413124302206035504030c1b53797374656d204d616b65722043412043657274696669636174653059301306072a8648ce3d020106082a811ccf5501822d034200041215f3c1b7f7760daae4f6fcbfb40d86ac0360eb9b7dc0c57acf191fe7ff7ba9262dcee03435abd79371eb19a872271db1d8ec42dab1f73eaa2a53146b7bd123a3263024300e0603551d0f0101ff04040302020430120603551d130101ff040830060101ff020100300a06082a811ccf5501837503470030440220572286cf883e99276add62fb9e012d458e993fbb3e6a2a1650070592b280694b02200abafb3a0984855b628212928f9f6b73b89ee9b5873b65c80b02e6c79392121e"
+    validate:
+        eq: ["code": 0]
+    saveGlobal:
+    parameters:
+      - name: maker-certSerial-is-null
+        description: 证书不能为空
+        requests:
+            cert: ""
+        validate:
+            eq: ["errorCode": 500]
+
+-   name: device-type-list
+    description:
+    type: form
+    url: /device/type/queryList
+    method: POST
+    headers:
+        Cookie: ${sessionId}
+    requests:
+        page: 1
+        rows: 20
+        deviceStatus:
+        deviceLevel:
+        deviceName:
+        deviceSoc:
+    validate:
+        notNull: [data]
+    parameters:
+        - name: login-passWord-is-null
+          description: 密码不能为空
+          requests:
+              "request":
+                {
+                    "userInfo":"13000000001",
+                    "passWord":"",
+                    "veriCode": ""
+                }
+          validate:
+              eq: ["errorCode": 1]
